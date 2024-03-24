@@ -61,7 +61,7 @@ def create_weights_array(size: int, theta: float = -1.0):
   Creates a normaly distributed wheights array with "theta" as "w[0]"
   """
   w = 2*np.random.random((1,size)) - 1 
-  w[0] = theta
+  w[0][0] = theta
 
   return w
 
