@@ -92,3 +92,14 @@ def train_slp(x, d, w_i, eta, max_epoch = 10000):
   print(f'Training finished in {epoch} epochs.')
   
   return w
+
+def test_slp(x, w_f):
+  k, n = x.shape # defines number of samples (k) and number of inputs (n)
+  w = w_f
+  y = np.zeros((k,1))
+
+  for i in range(k):
+    u = np.dot(w, x[i])
+    y[i] = step_bipolar(u)
+
+  return y
