@@ -14,7 +14,7 @@ T = 5
 # Creating empty weights arrays (inital and final)
 w_i, w_f = {}, {}
 
-for i in range(1, T):
+for i in range(1, T+1):
   # Initiating weights array with small normalized random values
   w_i["T{i}"] = slp.create_weights_array(c)
   print(f'w_i[T{i}] = {w_i["T{i}"]}')
@@ -29,7 +29,7 @@ testing_data, rt, ct = file.text_to_table('data/epc01/teste.txt')
 x_test = slp.get_x(testing_data)
 # Creating empty results array
 y = {}
-for i in range(1, T):
+for i in range(1, T+1):
   # Testing results with trained perceptron / adjusted weights
   y["T{i}"] = slp.test(x_test, w_f["T{i}"])
   print(f"y[T{i}] = {y["T{i}"].T}")
