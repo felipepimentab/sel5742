@@ -81,7 +81,7 @@ def train_slp(x, d, w_i, eta, max_epoch = 10000):
       u = np.dot(w, x[i])
       y = step_bipolar(u)
 
-      if (y!=d).any():
+      if y!=d[i]:
         w = w + eta * (d[i] - y) * x[i]
         error = True
 
