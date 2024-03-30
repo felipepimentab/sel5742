@@ -1,14 +1,12 @@
 import numpy as np
 
-type matrix = list[list[float]]
-
 def step_bipolar(u, treshold = 0):
   if u<treshold:
     return -1
   else:
     return 1
 
-def text_to_table(path: str) -> tuple[matrix, int, int]:
+def text_to_table(path: str) -> tuple[np.ndarray, int, int]:
   """
   Reads training data from a .txt file and returns it as a matrix
   """
@@ -24,7 +22,7 @@ def text_to_table(path: str) -> tuple[matrix, int, int]:
   
   return x, k, n
 
-def get_x(data: matrix, x_0 = -1.0):
+def get_x(data: np.ndarray, x_0 = -1.0):
   """
   Extracts input samples "x" from testing data matrix
   """
@@ -38,7 +36,7 @@ def get_x(data: matrix, x_0 = -1.0):
 
   return x
 
-def get_x_and_d(data: matrix, x_0 = -1.0) -> tuple[matrix, matrix]:
+def get_x_and_d(data: np.ndarray, x_0 = -1.0) -> tuple[np.ndarray, np.ndarray]:
   """
   Extracts input samples "x" and expected output "d" from training data matrix
   """
