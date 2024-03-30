@@ -6,22 +6,6 @@ def step_bipolar(u, treshold = 0):
   else:
     return 1
 
-def text_to_table(path: str) -> tuple[np.ndarray, int, int]:
-  """
-  Reads training data from a .txt file and returns it as a matrix
-  """
-  rows = open(path, 'r').readlines() # reads txt data as an array of its lines
-  k = len(rows) # sets the number of rows (samples)
-  n = len(rows[0].split()) # sets the number of columns (inputs)
-  x = np.zeros((k, n)) # creates a placeholder matrix for "x"
-
-  for i in range(k):
-    line = rows[i].split() # creates an array by spliting the line on every whitespace/tab
-    for j in range(n):
-      x[i][j] = float(line[j]) # assings the corresponding value to the table as a float
-  
-  return x, k, n
-
 def get_x(data: np.ndarray, x_0 = -1.0):
   """
   Extracts input samples "x" from testing data matrix
@@ -63,7 +47,7 @@ def create_weights_array(size: int, theta: float = -1.0):
 
   return w
 
-def train_slp(x, d, w_i, eta, max_epoch = 10000):
+def train(x, d, w_i, eta, max_epoch = 10000):
   """
   Training a Single-Layer Perceptron
   """
@@ -91,7 +75,7 @@ def train_slp(x, d, w_i, eta, max_epoch = 10000):
   
   return w
 
-def test_slp(x, w_f):
+def test(x, w_f):
   k, n = x.shape # defines number of samples (k) and number of inputs (n)
   w = w_f
   y = np.zeros((k,1))
