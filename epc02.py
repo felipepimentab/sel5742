@@ -7,31 +7,42 @@ import matplotlib.pyplot as plt
 train_data = np.loadtxt('data/epc02/treinamento.txt')
 test_data = np.loadtxt('data/epc02/teste.txt')
 
-# Extract features and labels
+# Extract inputs and outputs
 X_train, y_train = train_data[:, :4], train_data[:, 4:]
 X_test, y_test = test_data[:, :4], test_data[:, 4:]
-
-# Initialize MLP classifier
-mlp = MLPClassifier(hidden_layer_sizes=(15,), activation='logistic', solver='sgd', learning_rate_init=0.1, max_iter=1000, tol=0.00001)
 
 best_accuracy = 0
 best_error_list = None
 
-# Train the MLP and test against testing data for each training
+# Perform 5 trainings with different initial weights matrices
 for i in range(5):
-  print("----------")
+  # Initialize MLP classifier with different initial weights
+  mlp = MLPClassifier(
+    hidden_layer_sizes=(15,),
+    activation='logistic',
+    solver='sgd',
+    learning_rate_init=0.1,
+    max_iter=2000,
+    epsilon=0.00001
+  )
+
   print(f"Training {i+1}")
+
+  # Train the MLP
   mlp.fit(X_train, y_train)
+
+  # Test against testing data
   predictions = mlp.predict(X_test)
   accuracy = accuracy_score(y_test, predictions)
   print(f"Accuracy for training {i+1}: {accuracy}")
+
+  # Check if this training has the highest accuracy so far
   if accuracy > best_accuracy:
     best_accuracy = accuracy
     best_error_list = mlp.loss_curve_
 
 # Plot mean quadratic error vs training epoch for the best training
 if best_error_list:
-  plt.close('all')
   plt.plot(best_error_list)
   plt.xlabel('Epoch')
   plt.ylabel('Mean Quadratic Error')
