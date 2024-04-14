@@ -31,13 +31,13 @@ plt.title('Plot of Data for Item 1')
 plt.legend()
 plt.savefig("imgs/epc03/item1_plot.png")
 
-# Item 8: Train SVM with C = 1 for problem with 2 input attributes and 51 instances
+# Item 4: Train SVM with C = 1 for problem with 2 input attributes and 51 instances
 
-# Train SVM with C = 1 for item 8
+# Train SVM with C = 1 for item 4
 svm_c1_1 = SVC(kernel='linear', C=1)
 svm_c1_1.fit(X_1, y_1)
 
-# Plot decision boundary for C = 1 for item 8
+# Plot decision boundary for C = 1 for item 4
 plt.figure()
 plt.scatter(X_class1_1[:, 0], X_class1_1[:, 1], marker='+', label='Class +1')
 plt.scatter(X_class2_1[:, 0], X_class2_1[:, 1], marker='o', label='Class -1')
@@ -51,15 +51,15 @@ Z_c1_1 = Z_c1_1.reshape(xx1_1.shape)
 plt.contour(xx1_1, xx2_1, Z_c1_1, colors='k', linestyles=['-'], levels=[0], label='Decision Boundary (C=1)')
 plt.xlabel('Attribute 1')
 plt.ylabel('Attribute 2')
-plt.title('Decision Boundary for C = 1 (Item 8)')
+plt.title('Decision Boundary for C = 1 (Item 4)')
 plt.legend()
-plt.savefig("imgs/epc03/item2_decision_boundary_c1.png")
+plt.savefig("imgs/epc03/item4_decision_boundary_c1.png")
 
-# Train SVM with C = 100 for item 8
+# Train SVM with C = 100 for item 4
 svm_c100_1 = SVC(kernel='linear', C=100)
 svm_c100_1.fit(X_1, y_1)
 
-# Plot decision boundary for C = 100 for item 8
+# Plot decision boundary for C = 100 for item 4
 plt.figure()
 plt.scatter(X_class1_1[:, 0], X_class1_1[:, 1], marker='+', label='Class +1')
 plt.scatter(X_class2_1[:, 0], X_class2_1[:, 1], marker='o', label='Class -1')
@@ -70,9 +70,9 @@ Z_c100_1 = Z_c100_1.reshape(xx1_1.shape)
 plt.contour(xx1_1, xx2_1, Z_c100_1, colors='r', linestyles=['--'], levels=[0], label='Decision Boundary (C=100)')
 plt.xlabel('Attribute 1')
 plt.ylabel('Attribute 2')
-plt.title('Decision Boundary for C = 100 (Item 8)')
+plt.title('Decision Boundary for C = 100 (Item 4)')
 plt.legend()
-plt.savefig("imgs/epc03/item2_decision_boundary_c100.png")
+plt.savefig("imgs/epc03/item4_decision_boundary_c100.png")
 
 # Item 7: Plot data for problem with 2 input attributes and 750 instances
 
@@ -95,7 +95,7 @@ plt.xlabel('Attribute 1')
 plt.ylabel('Attribute 2')
 plt.title('Plot of Data for Item 7')
 plt.legend()
-plt.savefig("imgs/epc03/item3_plot.png")
+plt.savefig("imgs/epc03/item7_plot.png")
 
 # Item 8: Train five SVM with Gaussian kernel for problem with 2 input attributes and 750 instances
 
@@ -126,6 +126,6 @@ plt.plot(gammas, accuracies, marker='o')
 plt.xlabel('Gamma')
 plt.ylabel('Accuracy')
 plt.title('Accuracy for Different Gamma Values (Item 8)')
-plt.savefig("imgs/epc03/item4_accuracy.png")
+plt.savefig("imgs/epc03/item8_accuracy.png")
 
 plt.show()
