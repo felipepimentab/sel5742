@@ -124,6 +124,7 @@ for gamma in gammas:
 plt.figure()
 plt.plot(gammas, accuracies, marker='o')
 plt.xlabel('Gamma')
+plt.xscale('log')
 plt.ylabel('Accuracy')
 plt.title('Accuracy for Different Gamma Values (Item 8)')
 plt.savefig("imgs/epc03/item8_accuracy.png")
