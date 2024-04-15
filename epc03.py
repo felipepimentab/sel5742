@@ -117,7 +117,7 @@ for gamma in gammas:
   
   # Calculate accuracy
   accuracy = accuracy_score(y_test, y_pred)
-  accuracies.append(accuracy)
+  accuracies.append(accuracy*100)
   print(f"Accuracy for gamma={gamma}: {accuracy}")
 
 # Plot accuracies for item 8
@@ -125,7 +125,7 @@ plt.figure()
 plt.plot(gammas, accuracies, marker='o')
 plt.xlabel('Gamma')
 plt.xscale('log')
-plt.ylabel('Accuracy')
+plt.ylabel('Accuracy (%)')
 plt.title('Accuracy for Different Gamma Values (Item 8)')
 plt.savefig("imgs/epc03/item8_accuracy.png")
 
