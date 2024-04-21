@@ -1,8 +1,13 @@
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.metrics import pairwise_distances_argmin_min
 from tabulate import tabulate
+
+# Create directory to save images
+if not os.path.exists("imgs/epc04"):
+  os.makedirs("imgs/epc04")
 
 med_name = ['analgesic', 'anti-inflammatory', 'antibiotic', 'antihistamine', 'antipyretic']
 
