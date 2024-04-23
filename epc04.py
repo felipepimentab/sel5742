@@ -27,7 +27,7 @@ for i in range(k):
     attrs[i] = [med_name[i], cluster_centers[i][0], cluster_centers[i][1]]
 print(tabulate(attrs, headers=['cluster', 'atribute 1 (pH)', 'atribute 2 (sol)']))
 
-# Item 3:
+# Item 3: Get number of samples and mean distance
 print('\n')
 attrs = [None]*k
 for i in range(k):
