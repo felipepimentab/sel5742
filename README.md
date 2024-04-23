@@ -1,27 +1,27 @@
 # SEL5742
-Repositório para a disciplina de **Aprendizagem de Máquinas**
+Repository for the **Machine Learning** discipline
 
-## Executando localmente 🚀
-Este repositório utiliza o mesmo ambiente virtual **venv** do python para todas as EPCs. As dependências necessárias estão listadas em `requirements.txt`. No MacOS o ambiente pode ser criado e configurado com um script único:
+## Running locally 🚀
+This repository uses the same Python virtual environment **venv** for all EPCs. The required dependencies are listed in `requirements.txt`. On MacOS, the environment can be created and set up with a single script:
 
-#### Script único (MacOS 🍎)
+#### Single script (MacOS 🍎)
 ```
 sh init.sh
 ```
 
-Nos demais sistemas essa configuração pode ser feita manualmente com os seguintes comandos.
+For other systems, this setup can be done manually with the following commands.
 
-#### Criar ambiente virtual
+#### Create virtual environment
 ```
 python -m venv .venv
 ```
 
-#### Ativar o ambiente
+#### Activate the environment
 ```
 source .venv/bin/activate
 ```
 
-#### Instalar as dependências
+#### Install dependencies
 ```
 pip install -r requirements.txt
 ```
