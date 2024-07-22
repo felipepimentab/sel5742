@@ -159,8 +159,8 @@ train_Q_learning(10000)
 policy = get_policy()
 
 # Write the optimal policy to a file
-with open('optimal_policy.txt', 'w') as file:
+with open('data/epc09/optimal_policy.txt', 'w') as file:
   for state in policy:
     file.write(f"State: {state} -> Action: {policy[state]}\n")
 
-print("Optimal policy has been written to 'optimal_policy.txt'")
+print("Optimal policy has been written to 'data/epc09/optimal_policy.txt'")
