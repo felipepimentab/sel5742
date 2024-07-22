@@ -1,7 +1,7 @@
 import numpy as np
 import random
 
-# Initialize the Q-table
+# Inicialização da Q-table
 Q = {}
 actions = [(i, j) for i in range(3) for j in range(3)]
 
@@ -80,12 +80,12 @@ def get_policy():
     policy[state] = max(Q[state], key=Q[state].get)
   return policy
 
-# Train the Q-learning algorithm
+# Treinar o algoritmo de Q-learning
 train_Q_learning(10000)
 
-# Get the optimal policy
+# Obter a política ótima
 policy = get_policy()
 
-# Print the optimal policy
+# Imprimir a política ótima
 for state in policy:
   print(f"State: {state} -> Action: {policy[state]}")
